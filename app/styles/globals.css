@@ -1,0 +1,323 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Inovasity + MediMorphAI Design Tokens */
+  /* Brand Colors */
+  --brand-navy: #112D4F;
+  --brand-blue: #1B5E93;
+  --brand-blue-2: #125B95;
+  --brand-teal: #408E9D;
+  --neutral-light: #EBF1F3;
+  --accent-sun: #FBD9A6;
+  
+  /* Semantic Colors */
+  --color-primary: #112D4F;
+  --color-primary-hover: #0D2340;
+  --color-accent: #1B5E93;
+  --color-accent-2: #125B95;
+  --color-teal: #408E9D;
+  --color-background: #FFFFFF;
+  --color-surface: #EBF1F3;
+  --color-border: #D1DEE3;
+  
+  /* Text Colors */
+  --text-primary: #112D4F;
+  --text-secondary: #4A5C6C;
+  --text-muted: #6B7D8C;
+  --text-on-dark: #FFFFFF;
+  
+  /* Status Colors */
+  --success-600: #16A34A;
+  --warning-600: #D97706;
+  --danger-600: #DC2626;
+  
+  /* Typography Scale */
+  --text-h1: 48px;
+  --text-h1-line: 56px;
+  --text-h2: 32px;
+  --text-h2-line: 40px;
+  --text-h3: 20px;
+  --text-h3-line: 28px;
+  --text-body: 16px;
+  --text-body-line: 24px;
+  --text-caption: 12px;
+  --text-caption-line: 18px;
+  
+  /* Font Weights */
+  --font-weight-semibold: 600;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  
+  /* Spacing Scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  
+  /* Shadows */
+  --shadow-card: 0 2px 8px rgba(17, 45, 79, 0.08);
+  --shadow-elevation: 0 8px 24px rgba(17, 45, 79, 0.12);
+  
+  /* Transition */
+  --transition-default: 200ms ease;
+  
+  /* Standard theme vars for shadcn compatibility */
+  --font-size: 16px;
+  --card: #EBF1F3;
+  --card-foreground: #112D4F;
+  --popover: #ffffff;
+  --popover-foreground: #112D4F;
+  --primary: #112D4F;
+  --primary-foreground: #ffffff;
+  --secondary: #EBF1F3;
+  --secondary-foreground: #112D4F;
+  --muted: #EBF1F3;
+  --muted-foreground: #6B7D8C;
+  --accent: #1B5E93;
+  --accent-foreground: #ffffff;
+  --destructive: #DC2626;
+  --destructive-foreground: #ffffff;
+  --border: #D1DEE3;
+  --input: transparent;
+  --input-background: #EBF1F3;
+  --switch-background: #D1DEE3;
+  --ring: #1B5E93;
+  --chart-1: #1B5E93;
+  --chart-2: #408E9D;
+  --chart-3: #125B95;
+  --chart-4: #FBD9A6;
+  --chart-5: #6B7D8C;
+  --radius: 0.75rem;
+  --sidebar: #EBF1F3;
+  --sidebar-foreground: #112D4F;
+  --sidebar-primary: #112D4F;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #408E9D;
+  --sidebar-accent-foreground: #112D4F;
+  --sidebar-border: #D1DEE3;
+  --sidebar-ring: #1B5E93;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  /* Focus Ring Styles */
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 2px solid var(--brand-teal);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+/**
+ * Typography System
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: var(--text-h1);
+      line-height: var(--text-h1-line);
+      font-weight: var(--font-weight-semibold);
+      color: var(--text-primary);
+    }
+
+    h2 {
+      font-size: var(--text-h2);
+      line-height: var(--text-h2-line);
+      font-weight: var(--font-weight-semibold);
+      color: var(--text-primary);
+    }
+
+    h3 {
+      font-size: var(--text-h3);
+      line-height: var(--text-h3-line);
+      font-weight: var(--font-weight-semibold);
+      color: var(--text-primary);
+    }
+
+    h4 {
+      font-size: var(--text-body);
+      line-height: var(--text-body-line);
+      font-weight: var(--font-weight-medium);
+      color: var(--text-primary);
+    }
+
+    p {
+      font-size: var(--text-body);
+      line-height: var(--text-body-line);
+      font-weight: var(--font-weight-normal);
+      color: var(--text-secondary);
+    }
+
+    label {
+      font-size: var(--text-body);
+      line-height: var(--text-body-line);
+      font-weight: var(--font-weight-medium);
+      color: var(--text-primary);
+    }
+
+    button {
+      font-size: var(--text-body);
+      line-height: var(--text-body-line);
+      font-weight: var(--font-weight-medium);
+    }
+
+    input, textarea {
+      font-size: var(--text-body);
+      line-height: var(--text-body-line);
+      font-weight: var(--font-weight-normal);
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+  scroll-behavior: smooth;
+}
+
+/* Utility classes */
+.text-h1 {
+  font-size: var(--text-h1);
+  line-height: var(--text-h1-line);
+  font-weight: var(--font-weight-semibold);
+}
+
+.text-h2 {
+  font-size: var(--text-h2);
+  line-height: var(--text-h2-line);
+  font-weight: var(--font-weight-semibold);
+}
+
+.text-h3 {
+  font-size: var(--text-h3);
+  line-height: var(--text-h3-line);
+  font-weight: var(--font-weight-semibold);
+}
+
+.text-body {
+  font-size: var(--text-body);
+  line-height: var(--text-body-line);
+}
+
+.text-caption {
+  font-size: var(--text-caption);
+  line-height: var(--text-caption-line);
+  font-weight: var(--font-weight-medium);
+}
